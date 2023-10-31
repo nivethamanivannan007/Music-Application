@@ -8,7 +8,7 @@ const savedata = async(req,res)=>
     const hashedpassword = await bcrypt.hash(req.body.Password, salt)
     req.body.Password = hashedpassword 
     const details = await service.saveuser(req.body)
-    res.send("Stored Successfully")
+    res.send(details)
 }
 //login form 
 const loginmatch = async(req,res)=>
